@@ -1,0 +1,17 @@
+DELIMITER $$
+
+CREATE FUNCTION ConcatenarDatosEmpresario(
+    p_nombre VARCHAR(50),
+    p_telefono INT,
+    p_cedula INT
+)
+RETURNS VARCHAR(100)
+BEGIN
+    DECLARE resultado VARCHAR(100);
+    
+    SET resultado = CONCAT(p_nombre, ' - Teléfono: ', p_telefono, ' - Cédula: ', p_cedula);
+    
+    RETURN resultado;
+END $$
+
+DELIMITER ;
